@@ -1,4 +1,4 @@
-(function(){
+(() => {
   angular
     .module('todoListsApp')
     .controller('NotesController', ['$scope', '$http', 'raw',

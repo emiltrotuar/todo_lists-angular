@@ -16,7 +16,8 @@
     "jquery": "^3.2.1",
     "jquery-ui": "~1.12.1",
     "jasmine-core": "jasmine#^2.5.2",
-    "kbw-datepick": "^5.1.1"
+    "kbw-datepick": "^5.1.1",
+    "foundation": "^5.5.3"
   },
   "devDependencies": {},
   "resolutions": {

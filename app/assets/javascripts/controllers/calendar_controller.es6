@@ -3,7 +3,7 @@
     .module('todoListsApp')
     .controller('CalendarController',
       ['$scope', '$http', 'Calendar', 'Task', 'Week',
-      ($scope, $http, Calendar, Task, Week) => {
+      ($scope, $http, Calendar, Task) => {
         Task.getList().then(tasks => {
           $scope.tasks = tasks
           $scope.calendar = new Calendar(tasks);
@@ -13,7 +13,7 @@
         $scope.createTask = () => {
           let startAt;
           if (!($scope.newTask && $scope.newTask.length)) {
-            alert('enter task name');
+            alert('Please fill in task name');
             return;
           }
           if(!$scope.startAt){
@@ -33,7 +33,7 @@
           };
           $scope.tasks.post(data).then((task) => {
             let taskStart = moment(task.start_at).format("YYYY-MM-DD");
-            $scope.$broadcast(taskStart, task)
+            $scope.$broadcast(taskStart, task);
           })
           $scope.newTask = '';
           $scope.startAt = '';

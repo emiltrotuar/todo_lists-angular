@@ -1,4 +1,4 @@
-(function(){
+(() => {
   angular
     .module('todoListsApp')
     .service('Task', ['Restangular', Restangular => {

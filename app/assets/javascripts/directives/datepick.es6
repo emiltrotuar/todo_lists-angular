@@ -2,8 +2,8 @@ angular.module('todoListsApp')
   .directive('datepicker', () => {
     return {
       restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attrs, ngModelCtrl) => {
+      require: 'ngModel',
+      link: (scope, element, attrs, ngModelCtrl) => {
         $(() => {
           $(element).datepick({
             dateFormat:'dd-mm-yyyy',
@@ -15,5 +15,6 @@ angular.module('todoListsApp')
             }
           });
         });
-      }}
+      }
+    }
   });

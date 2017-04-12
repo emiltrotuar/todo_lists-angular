@@ -3,7 +3,7 @@
 //= require_tree ./directives
 //= require_tree ./services
 
-(function(){
+(() => {
   angular.module('todoListsApp', ['ui.router','restangular']);
 
   angular

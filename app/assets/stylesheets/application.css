@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *
+ *= require bower_components/foundation/css/foundation
+ *= require bower_components/kbw-datepick/src/css/jquery.datepick.css
  *= require_tree .
  *
 */

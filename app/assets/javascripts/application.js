@@ -4,6 +4,7 @@
 //= require bower_components/restangular/dist/restangular
 //= require bower_components/lodash/lodash
 //= require bower_components/jquery/dist/jquery
+//= require bower_components/foundation/js/foundation
 //= require bower_components/kbw-datepick/dist/js/jquery.plugin.js
 //= require bower_components/kbw-datepick/dist/js/jquery.datepick
 //= require todo_lists

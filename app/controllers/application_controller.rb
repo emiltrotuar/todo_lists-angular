@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  layout ->{ request.xhr? ? false : 'application' }
-
   protect_from_forgery
 
   after_action :add_csrf_to_cookies
