@@ -1,0 +1,5 @@
+.clearfix
+  a ui-sref="calendar" calendar
+input ng-model="searchText" /
+ul
+  li ng-include="'/assets/notes/note.slim'" ng-repeat=("note in notes | filter:searchText")

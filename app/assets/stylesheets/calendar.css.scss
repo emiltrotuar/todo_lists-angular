@@ -1,0 +1,138 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400italic);
+
+* {
+  font-size: 12pt;
+  font-family: 'Merriweather';
+  font-style: italic;
+}
+
+body {
+  background: rgba(168,255,249,1);
+  background: -moz-linear-gradient(left, rgba(168,255,249,1) 0%, rgba(255,255,255,0.34) 95%, rgba(255,255,255,0.3) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(168,255,249,1)), color-stop(95%, rgba(255,255,255,0.34)), color-stop(100%, rgba(255,255,255,0.3)));
+  background: -webkit-linear-gradient(left, rgba(168,255,249,1) 0%, rgba(255,255,255,0.34) 95%, rgba(255,255,255,0.3) 100%);
+  background: linear-gradient(to right, rgba(168,255,249,1) 0%, rgba(255,255,255,0.34) 95%, rgba(255,255,255,0.3) 100%) !important;
+}
+
+div {
+  border-color: #BABABA !important
+}
+
+.current_month {
+  font-size: xx-large;
+  margin-right: 30px;
+  opacity: 0.2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+#tl_calendar_task_form {
+  display: inline-block;
+  border: 1px solid #B9B9B9;
+  padding: 2px;
+}
+
+#tl_cal_new_task:focus,
+#tl_cal_new_task_start:focus {
+  outline: none;
+}
+
+.tl_calendar_task_list {
+  width: 300px;
+}
+
+.tl_calendar_task_name {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+.tl_current_day {
+  background-color: #FFF7E7;
+}
+
+.tl_calendar_task_name.done {
+  color: #BABABA;
+  border-color: #BABABA;
+}
+
+.tl_task_priority {
+  label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 13px;
+  }
+  label:before {
+    content: "";
+    display: inline-block;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottombottom: 1px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+  }
+  input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 33px;
+    text-align: center;
+    line-height: 18px;
+  }
+  input[type=radio] {
+    display: none;
+  }
+}
+
+.tl_task_list,
+.tl_task_details {
+  display: inline-block;
+}
+
+.tl_task_details {
+  border: 1px solid black;
+}
+
+.tl_task + .tl_task {
+  border-top: 1px solid black;
+}
+
+.tl_task_details {
+  padding: 3px;
+  background: #FFEF53;;
+  width: 200px;
+}
+
+.tl_week {
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #B9B9B9;
+  max-width: 450px;
+  display: inline-block;
+}
+
+.tl_week_day {
+  display: table;
+}
+
+.tl_week_day + .tl_week_day {
+  border-top: 1px solid #BABABA;
+}
+
+.tl_week_day_name {
+  display: table-cell;
+  padding: 5px;
+  border-right: 1px solid #BABABA;
+  width: 85px;
+  color: #828282;
+  vertical-align: middle;
+}

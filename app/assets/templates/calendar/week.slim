@@ -1,0 +1,2 @@
+.tl_week
+  .currentDay class=("tl_week_day{{day.fullDate == currentDay ? ' tl_current_day' : ''}}") ng-controller="DayController" ng-include="'/assets/calendar/day.slim'" ng-repeat=("day in week.days")

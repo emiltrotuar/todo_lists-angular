@@ -1,0 +1,5 @@
+<script type="text/javascript">
+  window.tlAuthenticated = <%= @tl_authenticated %>
+</script>
+<button ng-hide="!isAuthenticated" id="tl_sign_out" ng-click="logOut()">sign out</button>
+<div ui-view></div>

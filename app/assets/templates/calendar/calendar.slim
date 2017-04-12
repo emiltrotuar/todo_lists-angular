@@ -1,0 +1,7 @@
+.clearfix
+  a ui-sref="notes"  notes
+.left ng-include="'/assets/calendar/new_task.slim'" onload="makeDatePicker()"
+span.right.current_month
+  | {{currentMonth}}
+.row
+  .tl_calendar.large-6.large-centered.columns.panel.radius ng-include="'/assets/calendar/week.slim'" ng-repeat=("week in calendar.weeks")

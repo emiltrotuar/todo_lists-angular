@@ -1,0 +1,19 @@
+{
+  "name": "todo_lists",
+  "version": "0.0.0",
+  "description": "todolists angular edition",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/emiltrotuar/todo_lists.git"
+  },
+  "author": "dimas",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "jasmine-core": "~2.2.0",
+    "karma-jasmine": "~0.3.5",
+    "karma-coffee-preprocessor": "~0.2.1"
+  }
+}

@@ -1,0 +1,81 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400italic);
+
+* {
+  font-size: 12pt;
+  font-family: 'Merriweather';
+  font-style: italic;
+}
+
+div {
+  border-color: #BABABA !important!
+}
+
+#test_calendar_task_form {
+  display: inline-block;
+  border: 1px solid #B9B9B9;
+  padding: 2px;
+  height: 29px;
+}
+
+.test_day {
+  display: table;
+}
+
+.test_day + .test_day {
+  border-top: 1px solid #BABABA;
+}
+
+.test_day_name {
+  display: table-cell;
+  padding: 5px;
+  border-right: 1px solid #BABABA;
+  width: 85px;
+  color: #828282;
+  vertical-align: middle;
+}
+
+#test_new_task:focus {
+  outline: none;
+}
+
+.test_task_list,
+.test_task_details {
+  display: inline-block;
+}
+
+.test_task_details {
+  border: 1px solid black;
+}
+
+.test_task + .test_task {
+  border-top: 1px solid black;
+}
+
+.test_task_details {
+  padding: 3px;
+  background: #FFEF53;;
+  width: 200px;
+}
+
+.test_task_list {
+  width: 300px;
+}
+
+.test_task_name {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+.test_task_name.done {
+  color: #BABABA;
+  border-color: #BABABA;
+}
+
+.test_week {
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #B9B9B9;
+  max-width: 450px;
+  display: inline-block;
+}

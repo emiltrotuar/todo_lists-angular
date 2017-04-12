@@ -1,0 +1,9 @@
+//= require bower_components/angular/angular
+//= require bower_components/angular-ui-router/release/angular-ui-router
+//= require bower_components/moment/moment
+//= require bower_components/restangular/dist/restangular
+//= require bower_components/lodash/lodash
+//= require bower_components/jquery/dist/jquery
+//= require bower_components/kbw-datepick/dist/js/jquery.plugin.js
+//= require bower_components/kbw-datepick/dist/js/jquery.datepick
+//= require todo_lists

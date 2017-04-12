@@ -1,0 +1,14 @@
+form#tl_calendar_task_form.panel ng-submit="createTask()" 
+  p
+    input#tl_cal_new_task autofocus="" ng-model="$parent.newTask" placeholder=("new task name") /
+  p
+    input#tl_cal_new_task_start datepicker="" ng-model="$parent.startAt" placeholder=("new task start date") /
+  input ng-click="createTask()" type="button" value=("Create task") /
+  .tl_task_priority
+    input#l name="priority" ng-model="$parent.priority" type="radio" value="0" /
+    label for="l"  l
+    input#m name="priority" ng-model="$parent.priority" type="radio" value="1" /
+    label for="m"  m
+    input#h name="priority" ng-model="$parent.priority" type="radio" value="2" /
+    label for="h"  h
+    input style="display:none" type="submit" /
