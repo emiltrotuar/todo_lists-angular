@@ -46,3 +46,7 @@ angular
     if (window.tlAuthenticated)
       Authentication.setLoginStatus(true);
   }]);
+
+angular.element(function() {
+  setTimeout(() => angular.element(document).foundation(), 1000)
+});

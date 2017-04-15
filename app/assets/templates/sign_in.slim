@@ -1,5 +1,8 @@
 .row
-  form.small-3.small-centered.columns ng-submit="logIn(email,password)" 
-    input name="email" ng-model="email" type="email" /
-    input name="password" ng-model="password" type="password" /
-    button type="submit" sign in
+  form.small-3.small-centered.columns ng-submit='logIn(email,password)'
+    .alert-box.warning data-alert='' ng-show='invalidCreds'
+      | Email or password is invalid
+      a.close href='#' &times;
+    input name='email' ng-model='email' type='email' /
+    input name='password' ng-model='password' type='password' /
+    button type='submit' Sign in
