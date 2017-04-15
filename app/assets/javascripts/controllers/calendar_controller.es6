@@ -1,8 +1,7 @@
-(() => {
-  angular
-    .module('todoListsApp')
-    .controller('CalendarController',
-      ['$scope', '$http', 'Calendar', 'Task', 'Week',
+angular
+  .module('todoListsApp')
+  .controller('CalendarController',
+    ['$scope', '$http', 'Calendar', 'Task', 'Week',
       ($scope, $http, Calendar, Task) => {
         Task.getList().then(tasks => {
           $scope.tasks = tasks
@@ -40,4 +39,3 @@
           $scope.priority = 1;
         };
       }]);
-  })();
