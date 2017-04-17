@@ -7,12 +7,17 @@ angular.module('todoListsApp', ['ui.router','restangular']);
 
 angular
   .module('todoListsApp')
-  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'RestangularProvider',
-    ($stateProvider, $urlRouterProvider, $httpProvider, RestangularProvider ) => {
+  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'AuthenticationProvider',
+    ($stateProvider, $urlRouterProvider, $httpProvider, AuthenticationProvider ) => {
       $stateProvider
         .state('signin', {
           url: '/signin',
-          templateUrl: '/assets/sign_in.slim'
+          templateUrl: '/assets/sign_in.slim',
+          onEnter: function($state, Authentication) {
+            if (Authentication.getLoginStatus()){
+              $state.go('calendar');
+            }
+          }
         })
         .state('notes', {
           url: '/notes',
@@ -24,14 +29,36 @@ angular
             ]
           },
           templateUrl: '/assets/notes/notes.slim',
-          controller: 'NotesController'
+          controller: 'NotesController',
+          onEnter: function($state, Authentication) {
+            if (!Authentication.getLoginStatus()){
+              $state.go('signin');
+            }
+          }
         })
         .state('calendar', {
           url: '/calendar',
           templateUrl: '/assets/calendar/calendar.slim',
-          controller: 'CalendarController'
+          controller: 'CalendarController',
+          onEnter: function($state, Authentication) {
+            if (!Authentication.getLoginStatus()){
+              $state.go('signin');
+            }
+          }
         });
-      $urlRouterProvider.otherwise("/calendar");
+      // $urlRouterProvider.otherwise("/calendar");
+      // $urlRouterProvider.when('/', ['$match', '$state', '$stateParams', function ($match, $state, $stateParams) {
+      //   debugger;
+      // }]);
+      $urlRouterProvider.rule(function ($injector, $location) {
+        var Authentication = $injector.get('Authentication')
+        if ($location.path() == '' || $location.path() == '/' )
+          if (Authentication.getLoginStatus()){
+            $location.replace().path('/calendar');
+          } else {
+            $location.replace().path('/signin');
+          }
+      });
 
       $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
       $httpProvider.defaults.headers.common['X-TL-Client'] = 'application';

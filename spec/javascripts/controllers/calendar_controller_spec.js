@@ -1,24 +1,44 @@
 describe("CalendarController", function() {
   var $controller;
-  $controller = void 0;
 
   beforeEach(function() {
     module('todoListsApp');
-    return inject(function(_$controller_) {
-      return $controller = _$controller_;
+    inject(function(_$controller_) {
+      $controller = _$controller_;
     });
   });
 
-  xdescribe("task creation", function() {
+  var testTasks = [
+    {
+      done: false,
+      id: "55460330457175623c000000",
+      name: "task_0",
+      start_at: "2015-05-03T11:14:56+00:00",
+      user: "550419ed45717562b0000000"
+    }, {
+      done: false,
+      id: "55460330457175623c010000",
+      name: "task_1",
+      start_at: "2015-05-04T11:14:56+00:00",
+      user: "550419ed45717562b0000000"
+    }
+  ];
+
+  describe("task creation", function() {
     return it("creates task", function() {
-      var $scope, controller, rawData;
+      var $scope, rawData;
+      inject(function($injector) {
+        $httpBackend = $injector.get('$httpBackend');
+        $httpBackend.when('GET', '/tasks').respond(testTasks);
+
       $scope = {};
       rawData = {
         data: {
           calendar: []
         }
       };
-      controller = $controller("CalendarController", {
+      $controller("CalendarController", {
+        '$httpBackend': $httpBackend,
         '$scope': $scope,
         'raw': rawData
       });
@@ -28,7 +48,8 @@ describe("CalendarController", function() {
       $scope.createTask();
       expect($scope.newTask).toEqual('');
       expect($scope.startAt).toEqual('');
-      return expect($scope.priority).toEqual(1);
+      expect($scope.priority).toEqual(1);
+      })
     });
   });
 });

@@ -1,7 +1,8 @@
 describe("Authentication", function() {
   var $auth, $httpBackend, fakeResponse;
-  $auth = void 0;
-  $httpBackend = void 0;
+  $auth = undefined;
+  $httpBackend = undefined;
+
   fakeResponse = {
     "_id": {
       "$oid": "550419ed45717562b0000000"
@@ -9,14 +10,17 @@ describe("Authentication", function() {
     "email": "user@mail.com",
     "extension_token": "bK6cFoy8Y9Fobi6kdRtz"
   };
+
   beforeEach(module('todoListsApp'));
+
   beforeEach(inject(function($injector) {
     $auth = $injector.get('Authentication');
     $httpBackend = $injector.get('$httpBackend');
     $httpBackend.when('POST', '/users/sign_in.json').respond(fakeResponse);
     return $httpBackend.when('DELETE', '/users/sign_out.json').respond(null);
   }));
-  return describe("methods", function() {
+
+  describe("methods", function() {
     it("logs in", function() {
       $httpBackend.expectPOST('/users/sign_in.json');
       expect($auth.getLoginStatus()).toBe(false);

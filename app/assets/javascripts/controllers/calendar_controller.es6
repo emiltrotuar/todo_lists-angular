@@ -4,9 +4,9 @@ angular
     ['$scope', '$http', 'Calendar', 'Task', 'Week',
       ($scope, $http, Calendar, Task) => {
         Task.getList().then(tasks => {
-          $scope.tasks = tasks
+          $scope.tasks = tasks;
           $scope.calendar = new Calendar(tasks);
-        })
+        });
         $scope.currentDay = moment().format("YYYY-MM-DD")
         $scope.currentMonth = moment().format("MMM")
         $scope.createTask = () => {
@@ -30,7 +30,7 @@ angular
               priority: $scope.priority
             }
           };
-          $scope.tasks.post(data).then((task) => {
+          Task.post(data).then((task) => {
             let taskStart = moment(task.start_at).format("YYYY-MM-DD");
             $scope.$broadcast(taskStart, task);
           })
