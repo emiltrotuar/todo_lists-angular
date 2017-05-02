@@ -46,10 +46,6 @@ angular
             }
           }
         });
-      // $urlRouterProvider.otherwise("/calendar");
-      // $urlRouterProvider.when('/', ['$match', '$state', '$stateParams', function ($match, $state, $stateParams) {
-      //   debugger;
-      // }]);
       $urlRouterProvider.rule(function ($injector, $location) {
         var Authentication = $injector.get('Authentication')
         if ($location.path() == '' || $location.path() == '/' )

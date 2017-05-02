@@ -1,3 +1,7 @@
-span
-  | {{task.name}}
-ng-include.tl_calendar_task_details ng-hide="detailsHidden" src="'/assets/calendar/task_details.slim'"
+.tl_task_main_block ng-click="toggleDetails()"
+  span
+    | {{task.name}}
+  ng-include.tl_calendar_task_details ng-hide="detailsHidden" src="'/assets/calendar/task_details.slim'"
+.tl_task_remove ng-click="removeTask(task, $index)"
+  | &times;
+

@@ -6,10 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.find_by(email: 'user@mail.com') ||
-       User.create(email: 'user@mail.com',
-                   password: 'password',
-                   password_confirmation: 'password')
+user = User.find_or_create_by!(email: 'user@mail.com') do |user|
+  user.password = 'password'
+  user.password_confirmation = 'password'
+end
+
 
 time = DateTime.now
 

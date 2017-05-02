@@ -4,4 +4,4 @@
   small
     | {{day.month_day}}
 .tl_calendar_task_list
-  .tl_calendar_task_name ng-click="toggleDetails()" ng-controller="TaskController" ng-include="'/assets/calendar/task.slim'" ng-repeat=("task in day.tasks")
+  .tl_calendar_task ng-controller="TaskController" ng-include="'/assets/calendar/task.slim'" ng-repeat=("task in day.tasks")

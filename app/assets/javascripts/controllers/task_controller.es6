@@ -55,7 +55,8 @@ angular
         $scope.isEditing = false;
       };
 
-      $scope.removeTask = task => {
+      $scope.removeTask = (task, index) => {
         $http.delete('/tasks/'+task.id);
+        $scope.day.tasks.splice(index, 1);
       };
     }]);

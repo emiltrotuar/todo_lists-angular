@@ -42,20 +42,24 @@ div {
   width: 300px;
 }
 
-.tl_calendar_task_name {
+.tl_calendar_task {
   display: inline-block;
   border: 1px solid black;
   margin: 3px;
   border-radius: 3px;
 }
 
-.tl_current_day {
-  background-color: #FFF7E7;
+.tl_calendar_task:hover {
+  background-color: #ade5f9;
 }
 
-.tl_calendar_task_name.done {
+.tl_calendar_task.done {
   color: #BABABA;
   border-color: #BABABA;
+}
+
+.tl_current_day {
+  background-color: #FFF7E7;
 }
 
 .tl_task_priority {
@@ -110,6 +114,24 @@ div {
   padding: 3px;
   background: #FFEF53;;
   width: 200px;
+}
+
+.tl_task_main_block {
+  width: 30px;
+  display: inline;
+  cursor: pointer;
+  &:hover {
+    background-color: #ade5f9;
+  }
+}
+
+.tl_task_remove {
+  width: 10px;
+  display: inline;
+  cursor: pointer;
+  &:hover {
+    background-color: #f95a50;
+  }
 }
 
 .tl_week {
