@@ -24,21 +24,17 @@ angular
       };
 
       $scope.editTask = task => {
-        $scope.editedTask = task;
         $scope.originalTask = angular.extend({}, task);
         $scope.isEditing = true;
       };
 
-      $scope.revertEditing = () => {
-        $scope.doneEditing($scope.originalTask);
-      };
-
-      $scope.doneEditing = task => {
-        $scope.editedTask = null;
-        task.name = task.name.trim();
-
-        if (!task.name) {
-          $scope.removeTask(task);
+      $scope.doneEditing = (task, event)=> {
+        if (event.keyCode == 13) {
+          $scope.updateTask(task);
+        }
+        else if (event.keyCode == 27) {
+          $scope.task = $scope.originalTask;
+          $scope.isEditing = false;
         }
       };
 

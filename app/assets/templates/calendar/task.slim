@@ -1,7 +1,10 @@
-.tl_task_main_block ng-click="toggleDetails()"
-  span
+.tl_task_main_block
+  span ng-show="!isEditing" ng-click="toggleDetails()"
     | {{task.name}}
+  input ng-keydown="doneEditing(task, $event)" ng-show="isEditing" ng-model="task.name"
   ng-include.tl_calendar_task_details ng-hide="detailsHidden" src="'/assets/calendar/task_details.slim'"
+a ng-click="editTask(task)"
+  i.fa.fa-edit
 .tl_task_remove ng-click="removeTask(task, $index)"
-  | &times;
+  i.fa.fa-remove
 
